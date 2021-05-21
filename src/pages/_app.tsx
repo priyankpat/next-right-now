@@ -1,16 +1,18 @@
-import MultiversalAppBootstrap from '@/app/components/MultiversalAppBootstrap';
 import '@/app/components/MultiversalGlobalExternalStyles';
-import { MultiversalAppBootstrapProps } from '@/app/types/MultiversalAppBootstrapProps';
 import '@/common/utils/ignoreNoisyWarningsHacks'; // HACK This ignore warnings and errors I personally find too noisy and useless
+import '@/modules/core/fontAwesome/fontAwesome';
+import '@/modules/core/sentry/sentry';
+import 'tailwindcss/tailwind.css';
+
+import MultiversalAppBootstrap from '@/app/components/MultiversalAppBootstrap';
+import { MultiversalAppBootstrapProps } from '@/app/types/MultiversalAppBootstrapProps';
+import { NextWebVitalsMetrics } from '@/modules/core/webVitals/types/NextWebVitalsMetrics';
+import { NextWebVitalsMetricsReport } from '@/modules/core/webVitals/types/NextWebVitalsMetricsReport';
+import React from 'react';
 import { SSGPageProps } from '@/layouts/core/types/SSGPageProps';
 import { SSRPageProps } from '@/layouts/core/types/SSRPageProps';
 import { sendWebVitals } from '@/modules/core/amplitude/amplitude';
-import '@/modules/core/fontAwesome/fontAwesome';
-import '@/modules/core/sentry/sentry';
-import { NextWebVitalsMetrics } from '@/modules/core/webVitals/types/NextWebVitalsMetrics';
-import { NextWebVitalsMetricsReport } from '@/modules/core/webVitals/types/NextWebVitalsMetricsReport';
 import size from 'lodash.size';
-import React from 'react';
 import { v1 as uuid } from 'uuid'; // XXX Use v1 for uniqueness - See https://www.sohamkamani.com/blog/2016/10/05/uuid1-vs-uuid4/
 
 /**

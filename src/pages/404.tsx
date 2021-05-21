@@ -1,18 +1,8 @@
-import { CommonServerSideParams } from '@/app/types/CommonServerSideParams';
-import Btn from '@/common/components/dataDisplay/Btn';
-import { SoftPageProps } from '@/layouts/core/types/SoftPageProps';
-import { SSGPageProps } from '@/layouts/core/types/SSGPageProps';
-import PublicLayout from '@/layouts/public/components/PublicLayout';
-import { getPublicLayoutStaticProps } from '@/layouts/public/publicLayoutSSG';
-import I18nLink from '@/modules/core/i18n/components/I18nLink';
 import {
   DEFAULT_LOCALE,
   LANG_EN,
   LANG_FR,
 } from '@/modules/core/i18n/i18n';
-import { createLogger } from '@/modules/core/logging/logger';
-import { css } from '@emotion/react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   GetStaticProps,
   NextPage,
@@ -23,6 +13,17 @@ import {
 } from 'next/router';
 // eslint-disable-next-line @typescript-eslint/no-unused-vars,no-unused-vars
 import React, { Fragment } from 'react';
+
+import Btn from '@/common/components/dataDisplay/Btn';
+import { CommonServerSideParams } from '@/app/types/CommonServerSideParams';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import I18nLink from '@/modules/core/i18n/components/I18nLink';
+import PublicLayout from '@/layouts/public/components/PublicLayout';
+import { SSGPageProps } from '@/layouts/core/types/SSGPageProps';
+import { SoftPageProps } from '@/layouts/core/types/SoftPageProps';
+import { createLogger } from '@/modules/core/logging/logger';
+import { css } from '@emotion/react';
+import { getPublicLayoutStaticProps } from '@/layouts/public/publicLayoutSSG';
 import { useTranslation } from 'react-i18next';
 
 const fileLabel = 'pages/404';

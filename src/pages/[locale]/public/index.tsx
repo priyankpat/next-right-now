@@ -1,22 +1,23 @@
-import { CommonServerSideParams } from '@/app/types/CommonServerSideParams';
-import Code from '@/components/dataDisplay/Code';
-import { OnlyBrowserPageProps } from '@/layouts/core/types/OnlyBrowserPageProps';
-import { SSGPageProps } from '@/layouts/core/types/SSGPageProps';
-import PublicLayout from '@/layouts/public/components/PublicLayout';
-import {
-  getPublicLayoutStaticPaths,
-  getPublicLayoutStaticProps,
-} from '@/layouts/public/publicLayoutSSG';
-import { AMPLITUDE_PAGES } from '@/modules/core/amplitude/amplitude';
-import useCustomer from '@/modules/core/data/hooks/useCustomer';
-import { Customer } from '@/modules/core/data/types/Customer';
-import { createLogger } from '@/modules/core/logging/logger';
 import {
   GetStaticPaths,
   GetStaticProps,
   NextPage,
 } from 'next';
+import {
+  getPublicLayoutStaticPaths,
+  getPublicLayoutStaticProps,
+} from '@/layouts/public/publicLayoutSSG';
+
+import { AMPLITUDE_PAGES } from '@/modules/core/amplitude/amplitude';
+import Code from '@/components/dataDisplay/Code';
+import { CommonServerSideParams } from '@/app/types/CommonServerSideParams';
+import { Customer } from '@/modules/core/data/types/Customer';
+import { OnlyBrowserPageProps } from '@/layouts/core/types/OnlyBrowserPageProps';
+import PublicLayout from '@/layouts/public/components/PublicLayout';
 import React from 'react';
+import { SSGPageProps } from '@/layouts/core/types/SSGPageProps';
+import { createLogger } from '@/modules/core/logging/logger';
+import useCustomer from '@/modules/core/data/hooks/useCustomer';
 
 const fileLabel = 'pages/[locale]/public/index';
 const logger = createLogger({ // eslint-disable-line no-unused-vars,@typescript-eslint/no-unused-vars
@@ -61,7 +62,7 @@ const PagePublicTemplateSSG: NextPage<Props> = (props): JSX.Element => {
       pageName={AMPLITUDE_PAGES.TEMPLATE_SSG_PAGE}
     >
       <p>
-        This page was created using from "/layouts/public/pagePublicTemplateSSG.tsx".<br />
+        This pages was created using from "/layouts/public/pagePublicTemplateSSG.tsx".<br />
         it is located at "/pages/[locale]/public/index.tsx", but you most likely want to move it to "/pages/[locale]/index.tsx".<br />
         <br />
         This page uses the "public" layout, which comes "naked" (no nav/footer) and doesn't fetch any data. (data are mocked, and minimalist)

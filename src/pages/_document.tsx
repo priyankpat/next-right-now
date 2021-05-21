@@ -1,8 +1,5 @@
-import { DEFAULT_LOCALE } from '@/modules/core/i18n/i18n';
-import { createLogger } from '@/modules/core/logging/logger';
 import * as Sentry from '@sentry/node';
-import classnames from 'classnames';
-import { DocumentInitialProps } from 'next/dist/next-server/lib/utils';
+
 import Document, {
   DocumentContext,
   DocumentProps,
@@ -11,7 +8,12 @@ import Document, {
   Main,
   NextScript,
 } from 'next/document';
+
+import { DEFAULT_LOCALE } from '@/modules/core/i18n/i18n';
+import { DocumentInitialProps } from 'next/dist/next-server/lib/utils';
 import React from 'react';
+import classnames from 'classnames';
+import { createLogger } from '@/modules/core/logging/logger';
 
 const fileLabel = 'pages/_document';
 const logger = createLogger({

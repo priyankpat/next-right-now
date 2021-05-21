@@ -1,13 +1,14 @@
-import { CommonServerSideParams } from '@/app/types/CommonServerSideParams';
-import { SSGPageProps } from '@/layouts/core/types/SSGPageProps';
-import {
-  GetStaticPaths,
-  GetStaticProps,
-} from 'next';
 import DemoHomePage, {
   getStaticPaths as getStaticPathsHomePage,
   getStaticProps as getStaticPropsHomePage,
 } from './demo/';
+import {
+  GetStaticPaths,
+  GetStaticProps,
+} from 'next';
+
+import { CommonServerSideParams } from '@/app/types/CommonServerSideParams';
+import { SSGPageProps } from '@/layouts/core/types/SSGPageProps';
 
 /*
   XXX This page is an "alias", it basically imports the whole /demo/index page and export it back

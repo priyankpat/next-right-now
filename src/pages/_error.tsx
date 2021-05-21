@@ -1,7 +1,9 @@
 import * as Sentry from '@sentry/node';
-import { NextPageContext } from 'next';
+
 import NextError, { ErrorProps as NextErrorProps } from 'next/error';
 import React, { Fragment } from 'react';
+
+import { NextPageContext } from 'next';
 
 export type ErrorPageProps = {
   err: Error;
